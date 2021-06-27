@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root 'homes#top'
+  resources :post_images, only: [:index, :show, :new, :create, :destroy]
 end
